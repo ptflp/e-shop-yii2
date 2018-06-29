@@ -24,7 +24,7 @@ class MenuWidget extends Widget
 
 	function run()
 	{
-		$this->data=Category::find()->all();
+		$this->data=Category::find()->indexBy('id')->asArray()->all();
 		dump($this->data);
 		return $this->tpl;
 	}
